@@ -1,0 +1,10 @@
+---
+- name: installing ubuntu server
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: install ubuntu
+    ansible.builtin.yum
+    a
+    

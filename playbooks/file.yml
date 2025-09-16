@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Deploy a file from local to the server
+
+
+---
+- name: Deploy files to the server
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: copy config
+      ansible.builtin.copy:
+        src: /home/Refinitiv/RTDS.yml
+        dest: /etc/config/RTDS.yml
+        owner: root
+        mode: 7777

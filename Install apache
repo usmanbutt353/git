@@ -1,0 +1,16 @@
+---
+- name: install Apache
+  hosts: all
+  become: yes
+
+tasks:
+  - name: install Apache
+    ansible.builtin.yml:
+      name: httpd
+      state: present
+
+ - name: start services
+   ansible.builtin.service:
+     name: httpd
+     state: started
+     enabled: yes
